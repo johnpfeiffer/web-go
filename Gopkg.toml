@@ -29,5 +29,7 @@
   go-tests = true
   unused-packages = true
 
-metadata.heroku['root-package'] github.com/johnpfeiffer/web-go
+
+[metadata.heroku]
+  root-package = "github.com/johnpfeiffer/web-go"
 
