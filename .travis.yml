@@ -1,0 +1,11 @@
+language: go
+script: go get && go test -v
+notifications:
+  email: false
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: X6UOdeNtG96aYLG5md1DYoJcfJ8GPyKk2aw8aJm4SsBAaMG0nCSFdTksXF+ODHIWQQkowgI/ezmYeNxPKWMKAdon8LfHl5LZrP488g1pViPO5bT7B9Na4lPO0bj5iwcATofKJEe0l1i/qj2r22ruhBBo/fU4nMHqwRbfLy37HpiKPvv/RnpjnZBZWfH+tVspijztNP4Jr9BnLRJRyeB6bo/wwfz1jqfPlMyl3xjRn3iUMuz3lnV329zU81J84aJzeD+o9gtQ6B3uoWOveAJqfxtEbB6XZ5UW+0cxqYqUpuHjnBhqVCGkEHPohbNTY/XWXu3b4UAv59O9ihDDtQfknJAfnAYs79fV/JxnDvgFATOaVO19ToMRgOgn4GgjAEMZlyA8k7fS3DNxPXuB3y9S5aKv7CC45LGjTsMpa3OwGZQ2AL6CIHNK5mYQPtOt/Nz9TcE1BjdZRXajgkn/O8SmXv93EOdRYxZdSQOVtWSi8kyXrh5bH//aEA9CjQ3oUXQY9KoZ1767zVmediA2Dppoo8WMj3qbvKjrJv6cdnfG4dJTFC0/hYeRNyqzOh1HmlgF6vsphk7+B8yNtdVZ9PkF1y8MnLtKhtd7wE/+WYbLCsXF8HslJL4TlpYUGQ+SsbIH7qHrFiTMpJ2ZGTrPEF9HtNaUqPiB85d3TI9JLTOP04E=
+  app: web-go
+
