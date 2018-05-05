@@ -1,14 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
 )
 
+var indexTemplate = GetIndexTemplate()
+
 func myHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hi")
+	indexTemplate.Execute(w, NoData{})
 }
 
 func main() {
