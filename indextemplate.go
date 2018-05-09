@@ -19,7 +19,7 @@ body{
 </style>
 </head>
 <body>
-hi
+hi , try <a href="/hexcolors">hexcolors</a>
 </body>
 </html>
 `))

@@ -4,18 +4,28 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
+// TODO: globals are evil - there is a better way
 var indexTemplate = GetIndexTemplate()
+var hexTemplate = GetHexTemplate()
 
-func myHandler(w http.ResponseWriter, r *http.Request) {
-	indexTemplate.Execute(w, NoData{})
+func myRouter(w http.ResponseWriter, r *http.Request) {
+	if !strings.Contains(r.URL.Path, "favicon") {
+		log.Println(r.URL.Path)
+	}
+	if strings.ToLower(r.URL.Path) == "/hexcolors" {
+		hexController(w, r)
+	} else {
+		indexTemplate.Execute(w, NoData{})
+	}
 }
 
 func main() {
 	port := getEnvOrDefault("PORT", "8080")
 	log.Println("Listening on port", port)
-	http.HandleFunc("/", myHandler)
+	http.HandleFunc("/", myRouter)
 	http.ListenAndServe(":"+port, nil)
 }
 
