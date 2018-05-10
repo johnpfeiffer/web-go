@@ -13,7 +13,7 @@ type HexColors struct {
 
 // GetHexTemplate returns the parsed file as a template object
 func GetHexTemplate() *template.Template {
-	return template.Must(template.ParseFiles("hexcolorstemplate.html"))
+	return template.Must(template.ParseFiles("base.tmpl", "components.tmpl", "hexcolorstemplate.html"))
 }
 
 func hexController(w http.ResponseWriter, r *http.Request) {

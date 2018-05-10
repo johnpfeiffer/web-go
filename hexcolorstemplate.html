@@ -1,16 +1,11 @@
-<html>
-  <head><style>
-        table, th, td {
-    border: 2px solid black;
-  }
-  </style></head>
-  <body>
+{{define "style"}}
+{{template "tablestyle" .}}
+{{end}}
+
+{{define "content"}}
   <table>
     {{range .Colors}}
-    <tr>
-      <td>{{.}}</td><td style="background-color: {{.}}; ">__</td>
-    </tr>
+    <tr><td>{{.}}</td><td style="background-color: {{.}}; ">__</td></tr>
     {{end}}
-    </table>
-</body>
-</html>
+  </table>
+{{end}}
